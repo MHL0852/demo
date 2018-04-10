@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    tr{
+      border-bottom: 1px solid #0b2e13;
+      height: 20px;
+    }
+    th{
+      user-select:none;
+    }
+    th,td{
+      min-width: 350px;
+      border: 1px solid #1c7430;
+      text-align: center;
+    }
+    .line{
+      float: right;
+      width: 2px;
+      cursor: col-resize;
+      background: red;
+      height: 20px;
+      margin:0;
+    }
+  </style>
+</head>
+<body>
+<div style="overflow: auto">
+  <table style="border: 1px solid #000; width: auto">
+    <col width="200" />
+    <col width="auto" />
+    <col width="auto" />
+    <tr>
+      <th>hello <p class="line" ></p></th>
+      <th>world <div class="line" ></div></th>
+      <th>11111111111111111111111111111111 <p class="line" ></p></th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td></tr>
+    <tr>
+      <td>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+      <td>ssssssssssssssssssssssssssssssssssss</td>
+      <td>ddddddddddddddddddddddddddd</td></tr>
+  </table>
+</div>
+
+<script>
+  (function () {
+    let initX,
+      initEvent,
+      containerWidth,
+      width,
+      endX;
+    let downFn=function(e){
+      e=e||window.event;
+
+      if(e.target.className==='line') {
+        initX = e.clientX;
+        initEvent = e;
+        window.addEventListener('mousemove',moveFn,false)
+        console.log(e.target.parentNode.parentNode.parentNode.parentNode.style.width);
+        containerWidth=parseFloat(getComputedStyle(e.target.parentNode.parentNode.parentNode.parentNode).width)
+        console.log(e);
+      }
+    };
+
+    let moveFn=function (e) {
+      e=e||window.event;
+      endX=e.clientX;
+      if(initEvent){
+        width=getComputedStyle(initEvent.target.parentNode).width;
+        width=parseFloat(width)
+        if(Math.abs(endX-initX)>=10){
+          initEvent.target.parentNode.width=width+endX-initX;
+          console.log(initEvent.target.parentNode.clientWidth,'+++++++++++++++');
+          if((initEvent.target.parentNode.clientWidth===352)&&(endX-initX<=0)){
+            return
+          }
+          initEvent.target.parentNode.parentNode.parentNode.parentNode.style.width=containerWidth+endX  -initX+'px';
+        }
+        console.log(e,width);
+        endX=null;
+      }
+    };
+
+    let upFn=function (e) {
+      e=e||window.event;
+      endX=e.clientX;
+      if(initEvent){
+        let width=getComputedStyle(initEvent.target.parentNode).width;
+        width=parseFloat(width)
+        console.dir(initEvent.target.parentNode);
+        console.log(width , endX , initX);
+        if(Math.abs(endX-initX)>=10){
+          initEvent.target.parentNode.width=width+endX-initX;
+        }
+
+        console.log(e,width);
+        initEvent=null;
+        initX=null;
+        endX=null;
+        window.addEventListener('mousemove',moveFn,false)
+      }
+
+    }
+    window.addEventListener('mousedown',downFn,false)
+
+    window.addEventListener('mouseup',upFn,false)
+  })();
+</script>
+</body>
+</html>
