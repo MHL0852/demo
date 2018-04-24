@@ -1,0 +1,62 @@
+.main {
+  margin: 20px auto;
+  width: 600px;
+}
+.main .smallBox {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+.main .smallBox img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.main .smallBox .mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: orangered;
+  opacity: 0.3;
+  filter: alpha(opacity=50);
+  cursor: move;
+  border-radius: 50%;
+}
+.main .bigBox {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  display: none;
+  border-radius: 50%;
+}
+.main .bigBox img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.main .bigBox .mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: orangered;
+  opacity: 0.3;
+  filter: alpha(opacity=50);
+  cursor: move;
+  border-radius: 50%;
+}
+.main .bigBox img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 900px;
+  height: 900px;
+}

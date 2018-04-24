@@ -28,11 +28,11 @@
         endX = e.clientX;
         if (initEvent) {
             if (Math.abs(endX - initX) >= 10) {
-                initEvent.target.parentNode.width = width + endX - initX;
                 if ((initEvent.target.parentNode.clientWidth === 352) && (endX - initX <= 0)) {
                     return
                 }
-                initEvent.target.parentNode.parentNode.parentNode.parentNode.style.width = containerWidth + endX - initX + 'px';
+                initEvent.target.parentNode.width = Math.round(width + endX - initX);
+                initEvent.target.parentNode.parentNode.parentNode.parentNode.style.width = Math.round(containerWidth + endX - initX) + 'px';
             }
             endX = null;
         }
@@ -43,7 +43,14 @@
         endX = e.clientX;
         if (initEvent) {
             if (Math.abs(endX - initX) >= 10) {
-                initEvent.target.parentNode.width = width + endX - initX;
+                if ((initEvent.target.parentNode.clientWidth === 352) && (endX - initX <= 0)) {
+                    initEvent = null;
+                    initX = null;
+                    endX = null;
+                    window.addEventListener('mousemove', moveFn, false);
+                    return
+                }
+                initEvent.target.parentNode.width = Math.round(width + endX - initX);
             }
             initEvent = null;
             initX = null;

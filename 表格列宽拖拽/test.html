@@ -10,6 +10,7 @@
         }
 
         th {
+            position: relative;
             user-select: none;
             background: #ccc;
             height: 20px;
@@ -24,26 +25,132 @@
         }
 
         .line {
-            float: right;
-            width: 5px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 10px;
             cursor: col-resize;
-            height: 20px;
+            height: 100%;
             margin: 0;
+        }
+
+        #tabHeader{
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     </style>
 </head>
 <body>
-<div style="overflow: auto">
-    <table style="border: 1px solid #000; width: auto">
+<div style="overflow: auto;width:1500px;height: 200px;position: relative">
+    <table style="border: 1px solid #000; width: 976px;">
+        <colgroup><col width="325"><col width="325"><col width="326"> <!----></colgroup>
         <thead id="tabHeader">
         <tr>
             <th>hello</th>
             <th>world</th>
-            <th>11111111111111111111111111111111</th>
+            <th><div><span>11111111111111111111111111111111</span></div></th>
         </tr>
         </thead>
         <tbody>
         <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>  <tr>
             <td>1</td>
             <td>2</td>
             <td>3</td>
@@ -58,6 +165,6 @@
 
 </div>
 
-<script src="./test_es5.js"></script>
+<script src="./test.js"></script>
 </body>
 </html>
